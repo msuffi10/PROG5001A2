@@ -1,0 +1,16 @@
+
+Syntax Errors:
+ Class GameBoard	 
+	 Missing Semicolons
+ 	 changed "color.black" To "Color.black"	
+ SnakeGame
+	 Added "import javax.swing.JFrame;"
+	 Added Title Parameter to Constructor
+
+
+ Players
+	 Added code to write file and write username and password
+
+
+ SnakeGame
+	Added to read file

@@ -7,6 +7,9 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Collections;
+import java.io.File;
+import java.io.IOException;
+import java.io.FileWriter;
 
 public class PlayerList
 {
@@ -29,6 +32,38 @@ public class PlayerList
     public void add(String name, String password) {
         Player player = new Player(name, password);
         playerList.add(player);
+        
+   try {
+      File myObj = new File("players.txt");
+      if (myObj.createNewFile()) {
+        
+      } else {
+       
+      }
+    } catch (IOException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+    
+    
+    
+    
+     try {
+      FileWriter myWriter = new FileWriter("players.txt");
+      myWriter.write(name);
+      myWriter.write("\n");
+      
+      myWriter.write(password);
+      
+      myWriter.close();
+      
+    } catch (IOException e) {
+      
+      e.printStackTrace();
+    }
+      
+      
+      
     }
 
     /**
