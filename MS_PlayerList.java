@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.FileWriter;
 
-public class PlayerList
+public class MS_PlayerList
 {
     // list of player objects
     private ArrayList<Player> playerList;
@@ -19,7 +19,7 @@ public class PlayerList
     /**
      * Constructor for objects of class Player
      */
-    public PlayerList() {
+    public MS_PlayerList() {
         // initialise the player list
         playerList = new ArrayList<>();
     }
