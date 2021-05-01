@@ -1,10 +1,10 @@
 /**
  * Write a description of class Snake here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (MS_Snake)
+ * @version (1.0.0)
  */
-public class MS_Snake
+abstract class MS_Snake
 {
     /**
      * Constructor for objects of class Snake
@@ -12,5 +12,23 @@ public class MS_Snake
     public MS_Snake() {
         // initialise instance variables        
     }
+        
+    /**
+     * Method directionchange
+     * this method use to change direction of snake through arrow keys
+     */
+    abstract void directionchange();
+    
+    /**
+     * Method eatapple
+     * this method use for snake to eat apple 
+     */
+    abstract void eatapple();
 
+     /**
+     * Method Speedup
+     * the method use to snake speed increases once eat apple
+     */
+    abstract void Speedup();
+    
 }
