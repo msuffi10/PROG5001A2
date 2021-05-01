@@ -18,7 +18,7 @@ abstract class MS_Snake
      * this method use to change direction of snake through arrow keys
      */
     abstract void directionchange();
-    
+     
     /**
      * Method eatapple
      * this method use for snake to eat apple 
