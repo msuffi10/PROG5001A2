@@ -19,7 +19,7 @@ public class MS_PlayerList
     /**
      * Constructor for objects of class Player
      */
-    public MS_PlayerList() {
+        public MS_PlayerList() {
         // initialise the player list
         playerList = new ArrayList<>();
     }
