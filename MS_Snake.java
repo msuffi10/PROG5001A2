@@ -31,4 +31,9 @@ abstract class MS_Snake
      */
     abstract void Speedup();
     
+    /**
+     * Method growsnake
+     * the method use to grow snake when it eat apple
+     */
+    abstract void growsnake();
 }
