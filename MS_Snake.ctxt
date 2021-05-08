@@ -1,7 +1,23 @@
 #BlueJ class context
 comment0.target=MS_Snake
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Snake\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Snake\ here.\r\n\r\n\ @author\ (MS_Snake)\r\n\ @version\ (1.0.0)\r\n
 comment1.params=
 comment1.target=MS_Snake()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Snake\r\n
-numComments=2
+comment2.params=g
+comment2.target=void\ paintComponent(java.awt.Graphics)
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+comment4.params=
+comment4.target=void\ directionchange()
+comment4.text=\r\n\ Method\ directionchange\r\n\ this\ method\ use\ to\ change\ direction\ of\ snake\ through\ arrow\ keys\r\n
+comment5.params=
+comment5.target=void\ eatapple()
+comment5.text=\r\n\ Method\ eatapple\r\n\ this\ method\ use\ for\ snake\ to\ eat\ apple\ \r\n
+comment6.params=
+comment6.target=void\ Speedup()
+comment6.text=\r\n\ Method\ Speedup\r\n\ the\ method\ use\ to\ snake\ speed\ increases\ once\ eat\ apple\r\n
+comment7.params=
+comment7.target=void\ growsnake()
+comment7.text=\r\n\ Method\ growsnake\r\n\ the\ method\ use\ to\ grow\ snake\ when\ it\ eat\ apple\r\n
+numComments=8
