@@ -32,7 +32,7 @@ public class MS_SnakeGame extends JFrame {
         clickToPlay = new JLabel("CLICK TO PLAY");   
         topLayersScore = new JLabel("TOP LAYER'S SCORE");   
         currentPlayesScore = new JLabel("CURRENT PLAYER SCORE"); 
-        idAndName = new JLabel("PROG5001:2021 Umer Jhangir");
+        idAndName = new JLabel("PROG5001:2021 Muhammad Suffian");
         snake_image_label = new JLabel();
         quit = new JButton("Login");
         
