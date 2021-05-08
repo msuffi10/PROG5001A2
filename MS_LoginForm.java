@@ -25,7 +25,7 @@ public class MS_LoginForm extends JFrame implements ActionListener {
     private JTextField textUsername;
     private JPasswordField fieldPassword;
     private JButton buttonLogin;
-    private PlayerList playerList;
+    private MS_PlayerList playerList;
  
     public MS_LoginForm() {
         super("Login Form");
@@ -76,7 +76,7 @@ public class MS_LoginForm extends JFrame implements ActionListener {
         buttonLogin.addActionListener(this);
         
         //instantiate the playerList
-        playerList = new PlayerList();
+        playerList = new MS_PlayerList();
         try {
             readPlayerFromFile("players.txt");
         } catch (FileNotFoundException e) {
@@ -88,7 +88,9 @@ public class MS_LoginForm extends JFrame implements ActionListener {
         String username = textUsername.getText();
         String password = fieldPassword.getText();
         if (playerList.matchPlayer(username, password)) {
-            JOptionPane.showMessageDialog(this, username + ": login successfully");
+            MS_SnakeGame game=new MS_SnakeGame("Snake Game");
+             game.setVisible(true);
+             this.setVisible(false);
         } else {
             JOptionPane.showMessageDialog(this, "wrong username or password");
         }
