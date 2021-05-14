@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=MS_Prey
-comment0.text=\r\n\ Class\ Prey\ represents\ any\ prey\ object.\r\n\r\n\ @author\ \r\n\ @version\r\n
-comment1.params=img_path\ width\ height
-comment1.target=MS_Prey(java.lang.String,\ int,\ int)
+comment0.text=\r\n\ Class\ Prey\ represents\ any\ prey\ object.\r\n\r\n\ @author\ Muhammad\ Suffian\r\n\ @version\r\n
+comment1.params=
+comment1.target=MS_Prey()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Prey\r\n
-comment2.params=g
-comment2.target=void\ paintComponent(java.awt.Graphics)
-comment3.params=args
-comment3.target=void\ main(java.lang.String[])
+comment2.params=RAND_POS\ DOT_SIZE
+comment2.target=void\ locateApple(int,\ int)
+comment3.params=x\ y\ RAND_POS\ DOT_SIZE
+comment3.target=void\ checkApple(int,\ int,\ int,\ int)
 comment4.params=
 comment4.target=void\ randomplacement()
 comment4.text=\r\n\ Method\ randomplacement\r\n\ this\ method\ is\ used\ for\ random\ placement\ in\ frame\r\n
