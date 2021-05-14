@@ -11,37 +11,39 @@ import javax.swing.JLabel;
 /**
  * Class Prey represents any prey object.
  *
- * @author 
+ * @author Muhammad Suffian
  * @version
  */
 public class MS_Prey extends JPanel {
     
-    Image img;
+    public Image prey_image;
+    
+    public int apple_x; 
+    public int apple_y;
     /**
      * Constructor for objects of class Prey
      */
-    public MS_Prey(String img_path, int width, int height)
+    public MS_Prey()
     {
-        img = new ImageIcon(img_path).getImage();
-        //img = img.getScaledInstance(width, height, Image.SCALE_DEFAULT);
-        Dimension size = new Dimension(width, height);
-        setPreferredSize(size);
+        prey_image = new ImageIcon("resources/dot.png").getImage();
     }  
     
-    public void paintComponent(Graphics g) {
-        g.drawImage(img, 200, 200, null);
-        repaint();
-               
+    public void locateApple(int RAND_POS, int DOT_SIZE) {
+
+        int r = (int) (Math.random() * RAND_POS);
+        apple_x= ((r * DOT_SIZE));
+
+        r = (int) (Math.random() * RAND_POS);
+        apple_y = ((r * DOT_SIZE));
     }
     
-    public static void main(String[] args) {        
-       JFrame frame = new JFrame("Image demo");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        MS_Prey panel = new MS_Prey("images/smile.png", 100, 100);
-        
-        frame.add(panel);
-        frame.setSize(800, 600);
-        frame.setVisible(true);
+    public void checkApple(int x, int y , int RAND_POS, int DOT_SIZE) {
+
+        if ((x == apple_x) && (y == apple_y)) {
+
+            MS_GameBoard.dots++;
+            locateApple(RAND_POS,DOT_SIZE);
+        }
     }
     
     /**
