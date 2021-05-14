@@ -14,8 +14,10 @@ import javax.swing.ImageIcon;
 import java.awt.Image;
 import java.awt.Graphics;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class MS_SnakeGame extends JFrame {
+public class MS_SnakeGame extends JFrame implements ActionListener{
 
     private JLabel mySnakeGame;
     private JLabel gameOver;
@@ -82,6 +84,8 @@ public class MS_SnakeGame extends JFrame {
         // clickToPlay label
         constraints.gridx = 0;
         constraints.gridy = 1;  
+        clickToPlay.setBackground(Color.black);
+        clickToPlay.addActionListener(this);
         leftPanel.add(clickToPlay, constraints);
         
         // right panel
@@ -140,5 +144,13 @@ public class MS_SnakeGame extends JFrame {
             JFrame sgame = new MS_SnakeGame ("My Game");
             sgame.setVisible(true);
         });
+    }
+    
+    public void actionPerformed(ActionEvent e) {
+          this.setVisible(false);
+          
+          MS_playGame game = new MS_playGame();
+          game.setVisible(true);
+
     }
 }
