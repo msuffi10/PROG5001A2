@@ -25,7 +25,7 @@ public class MS_Prey extends JPanel {
      */
     public MS_Prey()
     {
-        prey_image = new ImageIcon("resources/dot.png").getImage();
+        prey_image = new ImageIcon("images/smile.png").getImage();
     }  
     
     public void locateApple(int RAND_POS, int DOT_SIZE) {
