@@ -199,6 +199,11 @@ public class MS_GameBoard extends JPanel implements ActionListener {
             public void keyPressed(KeyEvent e) {
 
             int key = e.getKeyCode();
+            
+            if(key == KeyEvent.VK_SPACE)
+            {
+                timer.stop();
+            }
 
             if ((key == KeyEvent.VK_LEFT) && (!rightDirection)) {
                 leftDirection = true;
