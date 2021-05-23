@@ -147,10 +147,12 @@ public class MS_SnakeGame extends JFrame implements ActionListener{
     }
     
     public void actionPerformed(ActionEvent e) {
-          this.setVisible(false);
-          
-          MS_playGame game = new MS_playGame();
-          game.setVisible(true);
-
+ 
+        this.setVisible(false);        
+        JFrame snake_game = new JFrame();
+        snake_game.add(new MS_GameBoard());
+        pack();
+        snake_game.setSize(300,300);
+        snake_game.setVisible(true);
     }
 }
