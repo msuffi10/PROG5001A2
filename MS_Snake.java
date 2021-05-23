@@ -24,8 +24,8 @@ public class MS_Snake extends JPanel
     public MS_Snake() {
         // initialise instance variables  
         
-        head = new ImageIcon("images/head.png").getImage();
-        tail = new ImageIcon("images/tail.png").getImage();
+        head = new ImageIcon("resources/head.png").getImage();
+        tail = new ImageIcon("resources/dot.png").getImage();
         
         Dimension size = new Dimension(10, 10);
         setPreferredSize(size);
