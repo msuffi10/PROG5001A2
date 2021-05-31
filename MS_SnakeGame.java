@@ -63,7 +63,7 @@ public class MS_SnakeGame extends JFrame implements ActionListener{
         
         // changing foreground color of game label
         mySnakeGame.setForeground(Color.white);
-        topPanel.add(mySnakeGame,topPanelConst);
+        topPanel.add(mySnakeGame,topPanelConst); 
 
         // Creating LeftPanel 
         JPanel leftPanel = new JPanel(new GridBagLayout());

@@ -24,19 +24,28 @@ public class MS_GameBoard extends JPanel implements ActionListener {
 
     private final int x[] = new int[ALL_DOTS]; // snake
     private final int y[] = new int[ALL_DOTS]; // snake
-    public static int dots; // snake
+    public static int dots,dots2; // snake
+    
+    private final int x2[] = new int[ALL_DOTS]; // snake
+    private final int y2[] = new int[ALL_DOTS]; // snake
   
 
     private boolean leftDirection = false; // snake
     private boolean rightDirection = true; // snake
     private boolean upDirection = false; // snake
     private boolean downDirection = false; // snake
+    
+    private boolean leftDirection2 = false; // snake
+    private boolean rightDirection2 = true; // snake
+    private boolean upDirection2 = false; // snake
+    private boolean downDirection2 = false; // snake
+    
      private boolean inGame = true; // gameboard
 
     private Timer timer; // gameboard
-    private Image ball; // snake tail
-    private Image apple; // prey
-    private Image head; // snake head
+    private Image ball,ball2; // snake tail
+    private Image apple,apple2; // prey
+    private Image head,head2; // snake head
     
     private MS_Prey prey;
     private MS_Snake snake;
@@ -65,19 +74,30 @@ public class MS_GameBoard extends JPanel implements ActionListener {
         ball = snake.tail;
         apple = prey.prey_image;
         head = snake.head;
+        
+         ball2 = snake.tail2;
+        apple2 = prey.prey_image2;
+        head2 = snake.head2;
     }
 
     // gameboard
     private void initGame() {
 
         dots = 3;
+        dots2 = 3;
 
         for (int z = 0; z < dots; z++) {
             x[z] = 50 - z * 10;
             y[z] = 50;
         }
         
+        for (int z = 0; z < dots2; z++) {
+            x2[z] = 200 - z * 10;
+            y2[z] = 50;
+        }
+        
         prey.locateApple(RAND_POS,DOT_SIZE);
+        prey.locateApple2(RAND_POS,DOT_SIZE);
 
         timer = new Timer(DELAY, this);
         timer.start();
@@ -97,12 +117,21 @@ public class MS_GameBoard extends JPanel implements ActionListener {
         if (inGame) {
 
             g.drawImage(apple, prey.apple_x, prey.apple_y, this);
+            g.drawImage(apple2, prey.apple_x2, prey.apple_y2, this);
 
             for (int z = 0; z < dots; z++) {
                 if (z == 0) {
                     g.drawImage(head, x[z], y[z], this);
                 } else {
                     g.drawImage(ball, x[z], y[z], this);
+                }
+            }
+            
+            for (int z = 0; z < dots2; z++) {
+                if (z == 0) {
+                    g.drawImage(head2, x2[z], y2[z], this);
+                } else {
+                    g.drawImage(ball2, x2[z], y2[z], this);
                 }
             }
 
@@ -147,6 +176,27 @@ public class MS_GameBoard extends JPanel implements ActionListener {
         if (downDirection) {
             y[0] += DOT_SIZE;
         }
+        
+        for (int z = dots2; z > 0; z--) {
+            x2[z] = x2[(z - 1)];
+            y2[z] = y2[(z - 1)];
+        }
+
+        if (leftDirection2) {
+            x2[0] -= DOT_SIZE;
+        }
+
+        if (rightDirection2) {
+            x2[0] += DOT_SIZE;
+        }
+
+        if (upDirection2) {
+            y2[0] -= DOT_SIZE;
+        }
+
+        if (downDirection2) {
+            y2[0] += DOT_SIZE;
+        }
     }
 
     private void checkCollision() {
@@ -186,6 +236,7 @@ public class MS_GameBoard extends JPanel implements ActionListener {
         if (inGame) {
 
             prey.checkApple(x[0],y[0],RAND_POS,DOT_SIZE);
+            prey.checkApple(x2[0],y2[0],RAND_POS,DOT_SIZE);
             checkCollision();
             move();
         }
@@ -204,6 +255,7 @@ public class MS_GameBoard extends JPanel implements ActionListener {
             {
                 timer.stop();
             }
+
 
             if ((key == KeyEvent.VK_LEFT) && (!rightDirection)) {
                 leftDirection = true;
@@ -227,6 +279,30 @@ public class MS_GameBoard extends JPanel implements ActionListener {
                 downDirection = true;
                 rightDirection = false;
                 leftDirection = false;
+            }
+            
+            if ((key == KeyEvent.VK_A) && (!rightDirection)) {
+                leftDirection2 = true;
+                upDirection2 = false;
+                downDirection2 = false;
+            }
+
+            if ((key == KeyEvent.VK_D) && (!leftDirection)) {
+                rightDirection2 = true;
+                upDirection2 = false;
+                downDirection2 = false;
+            }
+
+            if ((key == KeyEvent.VK_W) && (!downDirection)) {
+                upDirection2 = true;
+                rightDirection2 = false;
+                leftDirection2 = false;
+            }
+
+            if ((key == KeyEvent.VK_Z) && (!upDirection)) {
+                downDirection2 = true;
+                rightDirection2 = false;
+                leftDirection2 = false;
             }
         }
     }

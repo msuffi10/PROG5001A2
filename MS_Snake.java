@@ -18,6 +18,9 @@ public class MS_Snake extends JPanel
     
     Image head;
     Image tail;
+    
+    Image head2;
+    Image tail2;
     /**
      * Constructor for objects of class Snake
      */
@@ -26,6 +29,9 @@ public class MS_Snake extends JPanel
         
         head = new ImageIcon("resources/head.png").getImage();
         tail = new ImageIcon("resources/dot.png").getImage();
+        
+        head2 = new ImageIcon("resources/head.png").getImage();
+        tail2 = new ImageIcon("resources/dot.png").getImage();
         
         Dimension size = new Dimension(10, 10);
         setPreferredSize(size);
