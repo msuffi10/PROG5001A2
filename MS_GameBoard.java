@@ -254,6 +254,8 @@ public class MS_GameBoard extends JPanel implements ActionListener {
             if(key == KeyEvent.VK_SPACE)
             {
                 timer.stop();
+            }else{
+                timer.start();
             }
 
 
